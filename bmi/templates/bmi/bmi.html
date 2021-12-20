@@ -1,0 +1,40 @@
+{% extends "bmi/base.html" %}
+
+{% block content %}
+
+
+
+<!-- action="." is same as action="/bmi/" -->
+
+<body>
+    <html>
+        <head>
+            <section id="about">
+                <div class="container px-1">
+                    <div class="row gx-1 justify-content-center">
+                        <div class="col-lg-10">
+                            <h2>Simply BMI calculator</h2>
+                            <p class="lead">in the picture below you see the bmi standards. By entering your data the computer will 
+                                calculate and then display your bmi. To take care of your health, you can find more in the <a style="color:black" href="{% url 'services' %}">Service Page.</a></p></p>
+                                
+                            <img alt="bmiindex" style="float:right;width:450px;height:300px;" src="https://image.freepik.com/darmowe-wektory/wskaznik-masy-ciala-mezczyzny-wykres-bmi-fitness-z-meskimi-sylwetkami-i-skala_53562-7067.jpg">
+                            <form action="." method="POST">
+                                {% csrf_token %}
+                                {% if bmi %}
+                                <h2>
+                                    Your BMI is {{bmi}}.
+                                </h2>
+                                {% endif %}
+                                <table>
+                                    {{form.as_table}}
+                                </table>
+                                <input type="submit" value="Calculate" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </head>
+    </html>
+    </body>
+{% endblock content %}

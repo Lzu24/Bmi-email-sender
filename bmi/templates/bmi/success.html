@@ -1,0 +1,13 @@
+{% extends 'bmi/base.html' %}
+{% block content %}
+
+<header class="bg-primary bg-gradient text-black">
+    <div class=" col-md-10 center - container px-2 text-center">
+    <h1 class="fw-bolder">We sent your message</h1>
+    <p class="my-5">You can send another in the <a style="color:black" href="{% url 'contact' %}">contact page</a></p>
+    <p class="my-5">Or read more about healthy in the <a style="color:black" href="{% url 'home' %}">home page</a></p>
+    <p class="my-5">Or check yours friends/family bmi? ;) <a style="color:black" href="{% url 'bmi' %}">bmi page</a></p>
+    
+       
+</header>
+{% endblock content %}
